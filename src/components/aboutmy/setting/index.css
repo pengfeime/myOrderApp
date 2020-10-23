@@ -1,0 +1,23 @@
+.setting{
+    margin: 2rem 1rem;
+    font-size: 1rem;
+}
+.setting>div{
+    height: 3rem;
+    line-height: 3rem;
+    border-bottom:1px solid #ccc;
+}
+.setting button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+    font-size:1.5rem;
+    color:red;
+    background: white;
+    /*消除默认点击按钮边框变蓝效果*/
+    outline: none;
+    border: 1px solid transparent;
+    border-bottom: 1px solid grey;
+}

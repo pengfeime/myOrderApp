@@ -1,0 +1,208 @@
+.confirm{
+    padding:1.5rem;
+    background: linear-gradient(to bottom,#3385ff,white);
+}
+.user p{
+    color:#ccc;
+}
+.confirm .info{
+    background: white;
+    padding:.5rem;
+}
+.confirm .info>div{
+    margin:1rem .5rem;
+}
+.confirm .info .user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.confirm .info .user>div{
+    display: inline-block;
+    width:90%;
+}
+.confirm .info .user>div>span{
+    vertical-align: middle;
+}
+.confirm .info .user>div>span:nth-child(1){
+    display: inline-block;
+    padding:.2rem;
+    background: lightsteelblue;
+    color: blue;
+    border-radius: 2px;
+    border:1px solid blue;
+}
+.confirm .info .user>div>span:nth-child(2){
+    font-size:2rem;
+    font-weight:bold;
+    padding:0 .5rem;
+}
+.confirm .info .user>span{
+    flex:1;
+    font-size: 1.4rem;
+    color:#ccc;
+    font-weight:bold;
+    text-align: right;
+}
+.otherInfo span.to{
+    color:#ccc;
+    font-weight:bold;
+    text-align: center;
+}
+.confirm .otherInfo{
+    display: flex;
+    align-items: center;
+}
+.confirm .otherInfo>span:nth-child(1){
+    flex:1;
+    font-size:1.4rem;
+    font-weight:bold;
+    text-align: left;
+}
+.otherInfo>span:nth-child(2){
+    display:flex;
+    font-size:1.4rem;
+    align-items: center;
+    color:blue;
+}
+.otherInfo>span:nth-child(2)>span:nth-child(1){
+    padding-right:.5rem;
+}
+
+.confirm .detail{
+    margin-top:1rem;
+    padding:1rem;
+    background: white;
+}
+
+
+.goodInfo{
+    margin-top:1rem;
+}
+.deliverInfo{
+    padding-bottom: 3.5rem;
+}
+.goodInfo>h2{
+    margin-bottom:1rem;
+}
+.goodInfo img{
+    display: inline-block;
+    width:3rem;
+    height:3rem;
+    border-radius: 5px;
+}
+.goodInfo .foodItem{
+    display: flex;
+    align-items: center;
+    margin:.5rem 0;
+}
+.goodInfo .each{
+    flex:1;
+    display: flex;
+    align-items: center;
+}
+.each>span:nth-child(1){
+    flex:2;
+    margin-left: 1rem;
+}
+.each>span:nth-child(2){
+    flex:1;
+    text-align:right;
+}
+.each>span:nth-child(3){
+    flex:1;
+    font-weight:bold;
+    font-size:1.6rem;
+    text-align:right;
+}
+.packCost{
+    display: flex;
+    align-items: center;
+    margin:.5rem 0;
+}
+.packCost>span:nth-child(1){
+    width:3rem;
+    font-size:.5rem;
+    text-align: center;
+    border-radius: 2px;
+    color:white;
+    background: mediumblue;
+}
+.packCost>span:nth-child(2){
+    margin-left: 1rem;
+}
+.packCost>span:nth-child(3){
+    flex:1;
+    font-weight:bold;
+    font-size:1.6rem;
+    text-align: right;
+}
+.phone{
+    display: flex;
+    align-items: center;
+    margin:.5rem 0;
+    padding-bottom:1rem;
+    border-bottom:1px solid blue;
+}
+.phone>span:nth-child(1){
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    color:#3385ff;
+}
+.phone>span>i{
+    width:1rem;
+    height:1rem;
+    margin-right: .5rem;
+    background: url("../../assets/iconImage/phone.png") center/cover no-repeat;
+}
+.phone>span:nth-child(2){
+    flex: 1;
+    text-align: right;
+    display:flex;
+    align-items: center;
+}
+.phone>span:nth-child(2)>span:nth-child(2){
+    font-weight:bold;
+    font-size:1.6rem;
+}
+.phone>span:nth-child(2)>span:nth-child(1){
+    flex:1;
+    font_size:1.2rem;
+}
+.deliverInfo>div{
+    display:flex;
+    align-items: center;
+    margin:1rem 0;
+}
+.deliverInfo>div>span:nth-child(2){
+    flex:1;
+    text-align:right;
+}
+.toPay{
+    position:fixed;
+    bottom:3.5rem;
+    display: flex;
+    align-items: center;
+    width:100%;
+    height:3.5rem;
+    z-index:40;
+}
+.toPay>div{
+    height:3.5rem;
+    line-height:3.5rem;
+    color:white;
+    font-size:1.4rem;
+    font-weight:bold;
+}
+.toPay>div:nth-child(1){
+    flex:1;
+    text-indent:2rem;
+    background: grey;
+
+}
+.toPay>div:nth-child(2){
+    cursor: pointer;
+    padding:0 2rem;
+    background:lightgreen;
+}

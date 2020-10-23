@@ -1,0 +1,69 @@
+.cover-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../assets/iconImage/inset.jpg") center / cover no-repeat;
+  z-index: 100;
+}
+.cover-layer .sport-man {
+  position: absolute;
+  top: calc(50vh - 3rem);
+  left: 18%;
+  width: 2rem;
+  height: 2rem;
+  background: url("../../../assets/images/Mario/right-0.png") center / cover no-repeat;
+}
+.cover-layer span {
+  position: absolute;
+  height: calc(2rem - 4px);
+  width: 2rem;
+  background: url("../../../assets/images/mababa.jpeg") center / cover no-repeat;
+  top: 50%;
+  left: 80%;
+  margin-left: 0.5rem;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  animation: mababa 2s infinite ease-in-out;
+}
+@keyframes mababa {
+  0% {
+    transform: scale(1) translateY(-50%);
+  }
+  50% {
+    transform: scale(1.2) translateY(-30%);
+  }
+  100% {
+    transform: scale(1) translateY(-50%);
+  }
+}
+.cover-layer .hollow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 60%;
+  height: 2rem;
+  border: 2px solid #282c34;
+  border-radius: 5px;
+  filter: brightness(1.6);
+}
+.cover-layer .hollow .fill {
+  width: 0%;
+  height: 100%;
+  background: lightgreen;
+}
+.cover-layer .hollow p {
+  margin: 1rem;
+}
+.cover-layer .hollow :nth-child(3) {
+  color: white;
+  font-size: 1.5rem;
+}
+.cover-layer .hollow :nth-child(2) {
+  color: #f0f0f0;
+  font-size: 1.3rem;
+}

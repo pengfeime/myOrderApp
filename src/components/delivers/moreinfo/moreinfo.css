@@ -1,0 +1,56 @@
+.nav{
+    display: flex;
+    height: 2rem;
+    line-height: 2rem;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav a{
+    flex:1;
+    text-align: center;
+
+}
+.top{
+    position: relative;
+    text-align: center;
+}
+.top .topDescri{
+    position:absolute;
+    width: 100%;
+    top:3rem;
+    margin: 0 auto;
+}
+.top .backWall{
+    height: 6rem;
+    overflow: hidden;
+}
+.top .backWall img{
+    width:500%;
+    height:500%;
+    filter:blur(12px);
+}
+.topDescri .topPic{
+    width:10rem;
+    height:8rem;
+    margin: 0 auto;
+}
+.topDescri>p{
+    margin-top: 1rem;
+}
+.topDescri .topPic img{
+    width:100%;
+    height:100%;
+}
+.topDescri .relInfo>span:nth-child(2){
+    margin-left: 1rem;
+}
+.topDescri .relInfo>span:nth-child(3){
+    margin-left: 1rem;
+}
+h1,h2,h3,a,li,ul,div,p,img{
+    margin: 0;
+    padding: 0;
+}
+.choose{
+    border-bottom: 1px solid black;
+}

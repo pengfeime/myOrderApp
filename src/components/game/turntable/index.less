@@ -1,0 +1,62 @@
+.turn_table{
+  height:18rem;
+  position:relative;
+  .turntable{
+    margin:1rem auto;
+    width:(45/65)*100vmin;
+    height:(45/65)*100vmin;
+    top:(6/65)*100vmin;
+    left:(12/65)*100vmin;
+    z-index:10;
+    border-radius:50%;
+    transition:all 4s ease-in-out;
+    img{
+      display: inline-block;
+      width:100%;
+      height:100%;
+    }
+  }
+  .pointers{
+    position:absolute;
+    width:10/65*100vmin;
+    height:10/65*100vmin;
+    top:21.5/65*100vmin;
+    left:50%;
+    transform:translate(-50%,-50%);
+    z-index:20;
+    img{
+      display: inline-block;
+      width:100%;
+      height:100%;
+
+    }
+
+  }
+}
+
+.getPrize{
+  h3{
+    margin:1rem 0;
+  }
+  margin: .5rem;
+  background:linear-gradient(to bottom,white,#ffc40a);
+  .prize_zon{
+    height:14rem;
+    overflow: hidden;
+    ul{
+      li{
+        display: flex;
+        align-items: center;
+        height:2rem;
+        span{
+          display: inline-block;
+          width:1rem;
+          height:1rem;
+          margin:0 .5rem;
+          background: url("../../../assets/iconImage/inform.png") center/cover no-repeat;
+        }
+      }
+    }
+  }
+}
+

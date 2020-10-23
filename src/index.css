@@ -1,0 +1,23 @@
+html{
+  font-size:10px;
+  height:100%;
+}
+
+/* 这里需要重新设置font-size，方便布局计算*/
+
+body {
+  height:100%;
+  overflow-y: scroll;
+  font-size:1rem!important;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

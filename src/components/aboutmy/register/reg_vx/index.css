@@ -1,0 +1,51 @@
+.loginVX{
+    width: 100%;
+}
+.log_vx{
+    position: relative;
+    /*这里的left是相对于元素本身的位置发生的移动*/
+    left:-2.7rem;
+    width: 3rem;
+    height: 4rem;
+    margin: 1rem auto;
+    background: url("../../../../assets/iconImage/vx.png") center/cover no-repeat;
+}
+.loginVX input{
+    display: block;
+    width: 100%;
+    height: 2rem;
+    margin: .3rem 0;
+    text-align: center;
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    background: #EEEEEE;
+}
+.log_vx::after{
+    content: 'wechat';
+    display: block;
+    width: 5rem;
+    height: 4rem;
+    line-height: 4rem;
+    font-size: 2rem;
+    font-family: STKaiti;
+    /*注意这里的margin-left是以log_qq的左边为基准的*/
+    margin-left: 3.4rem;
+}
+.loginVX .submitReg{
+    display: block;
+    height: 2rem;
+    text-align: center;
+    width: 100%;
+    margin: 1rem 0;
+    border-radius: 5%;
+    outline: none;
+    border: 1px solid transparent;
+    background: #09d3ac;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.submitReg:active{
+    background: green;
+}

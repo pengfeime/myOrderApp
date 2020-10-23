@@ -1,0 +1,260 @@
+scrollbar{
+    width: 0;
+}
+.wheeldiv{
+    position:relative;
+    padding-bottom: 3.5rem;
+}
+.wheeldiv .refresh{
+    width: 100%;
+    height:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    opacity: 0;
+    transition:all .5s ease-out;
+}
+.refresh div>i{
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background: url("../../assets/icons/drag.png") center/cover no-repeat;
+}
+.refresh div>h3{
+    display: inline-block;
+}
+.content .blank{
+    width:100%;
+    height:3rem;
+}
+.carousel{
+    position:relative;
+    width:100%;
+    height:10rem;
+    overflow: hidden;
+}
+.carousel .carousel_img{
+    position:relative;
+    width: 100%;
+    height:100%;
+}
+.carousel .carousel_img ul{
+    width:100%;
+    height:100%;
+    /*设置透视perspective属性的元素就是被透视元素。一般地，该属性只能设置在变形元素的父级或祖先级。因为浏览器会为其子级的变形产生透视效果，但并不会为其自身产生透视效果*/
+    transform-style:preserve-3d;
+    perspective: 500px;
+    overflow: hidden;
+}
+.carousel .carousel_img ul li{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    box-shadow: -6px 6px 5px #ccc;
+    -webkit-box-shadow: -6px 6px 5px #ccc;
+    -moz-box-shadow: -6px 6px 5px #ccc;
+    -o-box-shadow: -6px 6px 5px #ccc;
+}
+.carousel .carousel_img ul li img{
+    width:100%;
+    height: 100%;
+}
+.carousel_point{
+    position: absolute;
+    top:8rem;
+    right:0;
+    margin-right:1rem;
+    z-index:28;
+}
+
+/*对于相同类型选择器制定的样式，在样式表文件中，越靠后的优先级越高
+注意，这里是样式表文件中越靠后的优先级越高，而不是在元素class出现的顺序*/
+.point_li{
+    display: inline-block;
+    width: .8rem;
+    height: .2rem;
+    margin: .1rem;
+    //border-radius: 50%;
+    background: grey;
+}
+.current_point{
+    background: white;
+}
+/*可以对元素的margin设置百分数，百分数是相对于父元素的width计算*/
+/*first,second,third是从最中间到左的顺序*/
+.first{
+    width:70%;
+    height:100%;
+    left:15%;
+    opacity: 1;
+    z-index: 30;
+    filter:contrast(200%);
+}
+.second{
+    width:60%;
+    height:70%;
+    left:0;
+    opacity: .7;
+    z-index: 8;
+    filter:contrast(50%);
+}
+.third{
+    width:60%;
+    height:70%;
+    left:0;
+    opacity: .3;
+    z-index:6;
+    filter:contrast(50%);
+}
+/*lastone是挨着第一个的（最中间的右边）*/
+.last_one{
+    width:60%;
+    height:70%;
+    left:40%;
+    opacity: .7;
+    z-index:8;
+    filter:contrast(50%);
+}
+.last_two{
+    width:60%;
+    height:70%;
+    left:40%;
+    opacity: .3;
+    z-index:6;
+    filter:contrast(50%);
+}
+.other{
+    left:0;
+    width:60%;
+    height:70%;
+    opacity: 0;
+    z-index:0;
+    filter:contrast(50%);
+}
+.previous{
+    position: absolute;
+    top:50%;
+    left:0;
+    width:15%;
+    height:70%;
+    transform: translateY(-50%);
+    z-index: 30;
+}
+.previous span{
+    position: absolute;
+    top:50%;
+    left:0;
+    border: .7rem solid transparent;
+    border-right:.7rem solid green;
+    transform: translate(-50%,-50%);
+}
+.nextone{
+    position:absolute;
+    top:50%;
+    right: 0;
+    width:15%;
+    height:70%;
+    transform: translateY(-50%);
+    z-index: 30;
+}
+.nextone span{
+    position: absolute;
+    top:50%;
+    right:0;
+    border: .7rem solid transparent;
+    border-left:.7rem solid green;
+    transform: translate(50%,-50%);
+}
+.span_hover{
+    text-shadow: 0 0 30px #7FFF00;
+}
+.blur{
+    filter:blur(3px);
+}
+.content .covering{
+    display: none;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    z-index: 1000;
+}
+.content .toLogin{
+    position: fixed;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    height:3rem;
+    width:100%;
+    bottom: 3.5rem;
+    background: rgba(0,0,0,.5);
+    color:white;
+    font-weight:bold;
+}
+.content .toLogin>a{
+    padding-left:1rem;
+}
+content .loginInfo{
+    display:flex;
+    align-items:center;
+}
+.content .loginInfo>span:nth-child(2),.content .toLogin>span{
+    position:relative;
+    background: #ffc40a;
+    border-radius:5px;
+    padding:.5rem;
+    margin:.5rem 1rem;
+    overflow:hidden;
+    cursor:pointer;
+}
+.content .toLogin>span{
+    background: #09d3ac;
+
+}
+@keyframes ripple {
+    from{
+        transform: translate(-50%,-50%) scale(0);
+        opacity: 1;
+    }
+    to{
+        transform:translate(-50%,-50%) scale(1);
+        opacity:0;
+    }
+}
+.content .toLogin>span:after,.content .loginInfo>span:nth-child(2):after{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:3rem;
+    background: #ccc;
+    top:50%;
+    left:50%;
+    border-radius:50%;
+    opacity:0;
+    transform: translate(-50%,-50%);
+}
+.content .toLogin>span:hover:after,.content .loginInfo>span:nth-child(2):hover:after{
+    animation:ripple 1s ease-in-out;
+}
+
+.content .loadmore{
+    width: 100%;
+    height:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    opacity:0;
+    transition: .5s all ease-out;
+}
+.loadmore div>i{
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background: url("../../assets/icons/loadmore.png") center/cover no-repeat;
+}
+.loadmore div>h3{
+    display: inline-block;
+}

@@ -1,0 +1,125 @@
+.wrap{
+    position:relative;
+    margin:2rem 1rem;
+}
+.wrap .others{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.wrap .music{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin:1rem .5rem;
+    color:#ccc;
+    font-weight:bold;
+    cursor:pointer;
+    opacity:.7;
+    background: transparent;
+}
+.wrap .playgame{
+    flex:1;
+    text-align: left;
+    color:#ccc;
+    opacity:.7;
+    background:transparent;
+}
+.music>canvas{
+    transition:all 5s linear;
+}
+.music_hover{
+    text-shadow: 0 0 15px #ffc40a;
+}
+.music>span:nth-child(1){
+    width:1rem;
+    height:1rem;
+    margin:0 .5rem;
+    border-radius: 50%;
+    background: url("../../assets/iconImage/music.png") center/cover no-repeat;
+    animation:scaling 4s infinite;
+}
+@keyframes scaling {
+    from{
+        transform: scale(1);
+        opacity: .5;
+    }
+    50%{
+        transform: scale(1.2);
+        opacity:1;
+    }
+    to{
+        transform: scale(1);
+        opacity:.5;
+    }
+}
+.music>span:nth-child(3){
+    width:1rem;
+    height:1rem;
+    background: url("../../assets/iconImage/pause.png") center/cover no-repeat;
+    margin:0 .5rem;
+}
+#canvas{
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:-1;
+}
+.hid{
+    width:3rem;
+    height:1.5rem;
+}
+video{
+    position:absolute;
+    margin:auto;
+    top:6rem;
+}
+.higherbox input{
+    width: 100%;
+    height: 2.0rem;
+    color:white;
+    text-indent: 2.0rem;
+    background: url("../../assets/icons/search.png") no-repeat 2% 50%;
+    background-size: 1rem 1rem;
+    outline: none;
+    border-radius: 5px;
+}
+input::-webkit-input-placeholder{
+    color:lightgray;
+}
+.wrap>ul{
+    width:calc(80% - 2rem);
+    margin-left: 1rem;
+}
+.wrap>ul>li{
+    padding: .2rem;
+    color: lightblue;
+}
+.wrap>ul>li:hover{
+    background: #f0f0f0;
+    color: blue;
+}
+.higherbox{
+    position: relative;
+    height: 2rem;
+    line-height: 2rem;
+    width:80%;
+    padding:0rem 1rem 3rem 1rem;
+}
+.forclick{
+    position: absolute;
+    width:2.0rem;
+    height: 2.0rem;
+    top:4rem;
+    z-index: 2;
+
+}
+.clearText{
+    position:absolute;
+    top: .5rem;
+    right:1.5rem;
+    width:1rem;
+    height: 1rem;
+    background: url("../../assets/icons/cleartext.png") center/cover no-repeat ;
+    z-index:2;
+}

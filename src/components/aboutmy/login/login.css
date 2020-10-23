@@ -1,0 +1,81 @@
+.login{
+    background: aliceblue;
+    margin: .3rem .5rem;
+}
+.login .login_pwd{
+    position: fixed;
+    height:3rem;
+    line-height: 3rem;
+    top:0;
+    right: 0;
+    margin-right: .5rem;
+    color: white;
+    z-index: 99;
+}
+.login input{
+    /*outline是选中时的默认变色框*/
+    outline: none;
+    border: 1px solid lightgrey;
+    border-radius: 5%;
+}
+.login button{
+    outline: none;
+    border: 1px solid transparent;
+}
+.login>input{
+    height: 2rem;
+    width: 100%;
+    margin-bottom: .5rem;
+}
+.login .phoneNum{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: .5rem 0;
+    height: 2rem;
+    line-height: 2rem;
+    vertical-align: middle;
+}
+.login .phoneNum>span{
+    flex: 1;
+}
+.login .phoneNum>span>input{
+    width: 100%;
+}
+.login .phoneNum .clearNum{
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    line-height: 1rem;
+    left:68%;
+    top:.5rem;
+}
+.login .phoneNum>button{
+    display: inline-block;
+    padding: 0 .3rem;
+    background: #3385ff;
+    color: white;
+}
+.login p{
+    font-size: .8rem;
+}
+.login .protocol{
+    display: block;
+    height: 2rem;
+    text-align: center;
+    width: 100%;
+    margin: 1rem 0;
+    border-radius: 5%;
+    background: #09d3ac;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.login .protocol:active{
+    background: green;
+}
+div,input,span,button{
+    margin: 0;
+    padding: 0;
+}

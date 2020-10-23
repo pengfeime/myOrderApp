@@ -1,0 +1,177 @@
+.about_container{
+    position: relative;
+    padding: .3rem;
+    background: lightgray;
+}
+.about_container .set_mes{
+    position: absolute;
+    right: 1rem;
+    display: flex;
+    justify-content: space-around;
+    width: 5rem;
+    height: 2rem;
+    margin-top:.5rem;
+    margin-left: 70%;
+}
+.about_container .set_mes a{
+    width: 2rem;
+    height: 2rem;
+}
+.about_container .set_mes a:nth-child(1) span{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: url("../../assets/icons/mysetting_icon/setting.png") center/cover no-repeat;
+}
+.about_container .set_mes a:nth-child(2) span{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: url("../../assets/icons/mysetting_icon/message.png") center/cover no-repeat;
+}
+.signIn{
+    display: inline-block;
+    height: 2rem;
+    padding: 0 .5rem;
+    margin: .5rem .5rem 1.5rem .5rem;
+    border: 1px solid #1296db;
+    border-radius:1rem;
+
+}
+.signIn span{
+    vertical-align: middle;
+}
+.signIn span:nth-child(1){
+    display: inline-block;
+    width:1rem;
+    height:1rem;
+    background: url("../../assets/icons/sign.png") no-repeat center/cover;
+}
+.signIn span:nth-child(2){
+    padding-left: 1rem;
+}
+.superVip{
+    display: flex;
+    align-items: center;
+    margin:1rem .2rem;
+    padding: .6rem;
+    background: linear-gradient(to right,lightgoldenrodyellow,mistyrose);
+    border-radius: 5px;
+}
+.superVip>div{
+    flex:1;
+    display: flex;
+    align-items: center;
+}
+
+.superVip .super>span:first-child{
+    display: inline-block;
+    width:1.4rem;
+    height: 1.4rem;
+    background: url("../../assets/icons/cate_icon/vip.png") no-repeat center/cover;
+    border-radius: 50%;
+}
+.superVip .super>span:nth-child(2){
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: "Adobe 楷体 Std R";
+    margin:0 1rem;
+    color:burlywood;
+}
+.superVip>span:after{
+    display: inline-block;
+    content: '>';
+    width:1rem;
+    height:1rem;
+    text-indent: .5rem;
+}
+a,a:link,a:hover,a:visited,a:active{
+    text-decoration: none;
+    color: inherit;
+}
+.userInfo{
+    margin: 2rem .5rem .5rem;
+}
+.userInfo a{
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+/*.userInfo a::after{*/
+    /*content:'>';*/
+    /*font-weight: normal;*/
+/*}*/
+.about_container .coupon{
+
+    margin: 1rem .2rem;
+}
+.about_container .coupon .couponList{
+    display: flex;
+    list-style: none;
+}
+.about_container .coupon .couponList>li{
+    flex: 1;
+    display: inline-block;
+    padding: .5rem;
+}
+.linkdata{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+}
+.linkdata>span:first-child{
+    font-family: Helvetica Neue,Tahoma;
+    font-size:1.2rem;
+    font-weight: bold;
+}
+.about_container .coupon .couponList li span{
+    display: block;
+}
+.relList>a>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+}
+.relList>a>div span{
+    display: inline-block;
+}
+.relList>a>div>span:first-child{
+    width: 2rem;
+    height: 2rem;
+    margin: .2rem;
+}
+.relList>a>div>div{
+    display: flex;
+    justify-content: space-between;
+    margin-left: .8rem;
+    margin-right: .8rem;
+    width: 100%;
+}
+.relList>a>div>div>span:nth-child(2){
+    margin-left: 5rem;
+}
+.relList>a>div>div>span:nth-child(2)::after{
+    content: '>';
+}
+.relList .collections>span:first-child{
+    background: url("../../assets/iconImage/love.png") center/cover;
+}
+.relList .the_point>span:first-child{
+    background: url("../../assets/iconImage/pointnum.png") center/cover;
+}
+.relList .vip>span:first-child{
+    background: url("../../assets/iconImage/vip.png") center/cover;
+}
+.relList .server>span:first-child{
+    background: url("../../assets/iconImage/callcenter.png") center/cover;
+}
+.relList .recommend>span:first-child{
+    background: url("../../assets/iconImage/prize.png") center/cover;
+}
+.relList .forCard>span:first-child{
+    background: url("../../assets/iconImage/cards.png") center/cover;
+}
+.relList .recharge>span:first-child{
+    background: url("../../assets/iconImage/recharge.png") center/cover;
+}

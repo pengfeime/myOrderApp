@@ -1,0 +1,290 @@
+/*div,ul,li,p,a,i,em,input,h1,h2,h3,img{*/
+/*margin:0;*/
+/*padding:0;*/
+/*}*/
+
+.allBarbecue {
+    overflow-x:hidden;
+    text-align: left;
+    margin-top: .6rem;
+    padding-bottom: 7.5rem;
+}
+
+.allBarbecue .detail {
+    margin-left: 20%;
+    width: 100%;
+}
+
+.detail > h2 {
+    height: 2rem;
+    line-height: 2rem;
+}
+
+li {
+    list-style: none;
+}
+.foodlist .fooditem {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 5.5rem;
+    margin-top: .5rem;
+}
+
+.foodlist .fooditem .descri {
+    flex: 1;
+    margin-left: 5%;
+    height: 100%;
+}
+
+.foodlist .fooditem .descri .price_num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foodlist .fooditem .descri .price_num .controlNum {
+    flex: 1;
+    text-align: center;
+    margin-left:-1.0rem;
+}
+
+.left_pic {
+    width: 5rem;
+    height: 5rem;
+}
+
+.left_pic img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+ul.wrap {
+    position: relative;
+    /*position:fixed;*/
+    /*bottom: 7.5rem;*/
+}
+ul.wrap .leftTitle {
+    position: relative;
+    width: 6rem;
+}
+
+ul.wrap > li .addNum {
+    position: absolute;
+    width: 1.4rem;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    text-align: center;
+    border-radius: 50%;
+    top: 0;
+    right: 0;
+    background: red;
+    color: white;
+}
+
+ul.wrap .detail {
+    position: absolute;
+    top: 0;
+    left: 3rem;
+}
+
+.detail h2 {
+    margin-bottom: .5rem;
+}
+
+ul.wrap .sidenav {
+    height: 3rem;
+    line-height: 3rem;
+    width: 7rem;
+    padding-left: .4rem;
+}
+
+/* 为何这里的h3标签默认margin属性没有被覆盖掉？？？*/
+div, ul, li, a, p, h2, h3, span {
+    margin: 0;
+    padding: 0;
+}
+
+.allBarbecue h2 {
+    display: flex;
+    align-items: center;
+}
+
+.createSpan {
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url("../../../../assets/iconImage/hot.png") center/cover no-repeat;
+}
+
+.apply {
+    width:100%;
+    position: fixed;
+    bottom: 3.5rem;
+    height: 4rem;
+    vertical-align: middle;
+    line-height: 4rem;
+}
+
+.apply .addDetail {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    height: 100%;
+    width:60%;
+    background: lightgray;
+    /*原因是因为默认情况下使用inline-block类型时并列显示的元素的垂直对齐方式时底部对齐，为了使垂直对齐方式改为顶部对齐，就需要在div元素的样式中加入vertical-align属性*/
+    /*行内元素和替换元素（如<input><textarea>等）会有一个叫做基线（baseline）的玩意，他的位置位于文本框的底部，即文字的最底端；当块状行内元素无文本填充的时候，它的基线就会自动移至元素的最底端；同时，图片以及其他非替换元素的基线也为元素的最底端。
+
+总结起来就是，行内元素和替换元素的基线位于文本框的底端，无文本的块状行内元素、图片和非替换元素的基线就是元素的最底端。大家横向对齐的参照物默认就是这个基线（baseline）
+
+所以上面的问题就很好理解了，空白的块状行内元素基线默认为元素底端，其他几个元素的基线位于文本的底部，大家都参照基线进行了对齐。看似参差不齐，其实上还是对齐的*/
+
+    /*解决办法：既然页面的混乱是因为“基线对齐”导致的，那只需要设置元素的垂直对齐不参照基线即可，引入vertical-align属性，设置元素的垂直对齐方式---由于各元素高度相同，top、middle、bottom任选其一就可实现对齐*/
+    vertical-align: top;
+}
+
+.apply .addDetail>span:first-child {
+    display: inline-block;
+    /*这里的relative是给小球定位用的*/
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    margin: .5rem 1.0rem .5rem 2.0rem;
+    background: url("../../../../assets/iconImage/shopping_cart.png") center/cover no-repeat;
+}
+.cartNone{
+    background: url("../../../../assets/iconImage/cart_none.png") center/cover no-repeat !important;
+}
+.apply .addDetail span:first-child > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid black;
+    border-radius: 50%;
+    background: red;
+    color: white;
+}
+.apply .addDetail .count{
+    display: inline-block;
+    position: absolute;
+    width: 8rem;
+    height: 2.4rem;
+    left:50%;
+    top:50%;
+    margin-top: -1.2rem;
+}
+.apply .addDetail .count p{
+    margin: 0;
+    line-height: 1.2rem;
+}
+.toApply {
+    display: inline-block;
+    height: 4rem;
+    width:40%;
+    background: lightgreen;
+    color:white;
+    font-weight:bold;
+}
+.lightgreen{
+    background: lightgreen;
+}
+.grey{
+    background: grey;
+}
+.hideBeg{
+    position: fixed;
+    display: none;
+    top:0;
+    left:0;
+    background: grey;
+    opacity: .3;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+.showBeg{
+    display: block;
+}
+.goodsList{
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height:0;
+    background: white;
+    transition: all .3s ease-in-out;
+    z-index: -1;
+    overflow: hidden;
+}
+.goodsList>p{
+    height: 2rem;
+    line-height: 2rem;
+}
+.bottom_list{
+    display: flex;
+    height:2rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.bottom_list>span:nth-child(1){
+    flex:2
+}
+.bottom_list>span:nth-child(2){
+    flex:1
+}
+.bottom_list>span:nth-child(3){
+    flex:1
+}
+.hid{
+    height: 0;
+    top:0;
+}
+.ADD {
+    animation: scaling_big .4s linear;
+}
+
+.SUB {
+    animation: scaling_small .4s linear;
+}
+/*这个kon只是为了让购物车假装运动了一次动画，其实什么也没有做*/
+.kon{
+    animation: kon .4s linear;
+}
+@keyframes kon {
+
+}
+@keyframes scaling_big {
+    0% {
+        transform: scale(1.0);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1.0);
+    }
+}
+
+@keyframes scaling_small {
+    0% {
+        transform: scale(1.0);
+    }
+    50% {
+        transform: scale(.5);
+    }
+    100% {
+        transform: scale(1.0);
+    }
+}
+.toApply a{
+    width:100%;
+    height:100%;
+}
+
+

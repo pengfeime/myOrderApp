@@ -1,0 +1,44 @@
+.controlNum{
+     display: flex;
+     height: 2rem;
+     justify-content: center;
+     align-items: center;
+ }
+.sub{
+    width: 2rem;
+    height: 2rem;
+    background: url("../../assets/iconImage/sub.png") center/cover no-repeat;
+}
+.num{
+    line-height: 2rem;
+    width: 2rem;
+    height: 2rem;
+}
+.controlNum .add{
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    margin-left: 0;
+    background: url("../../assets/iconImage/add.png") center/cover no-repeat;
+}
+.controlNum .add .outer{
+    position:absolute;
+    width:1.4rem;
+    height:1.4rem;
+    background:transparent;
+    transition:all .5s linear;
+    z-index: 99;
+}
+.controlNum .add .inner{
+    width:100%;
+    height:100%;
+    background: red;
+    border-radius:50%;
+    transition: all .5s cubic-bezier(.52,.33,.9,.24);
+}
+.hidden{
+    display: none;
+}
+.visible_none{
+    visibility: hidden;
+}

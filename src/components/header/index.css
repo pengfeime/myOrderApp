@@ -1,0 +1,89 @@
+.headWrap{
+    position: fixed;
+    height: 3rem;
+    width:100%;
+    top:0;
+    z-index:30;
+}
+.header{
+    height:3.0rem;
+    line-height: 3.0rem;
+    background-color: #3385ff;
+    color:white;
+}
+.aboutLoc{
+    display: flex;
+    width:100%;
+    height:3rem;
+    align-items: center;
+    background:white;
+}
+.toLoc{
+    display: inline-block;
+    height: 3rem;
+    width:80%;
+
+}
+.location{
+    display: flex;
+    align-items:center;
+    position:relative;
+    text-indent: 3rem;
+    background: -webkit-linear-gradient(left,#ccc,white);
+    height: 3rem;
+}
+/*这里尝试用伪元素来实现位置图标*/
+.location::before{
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    position:absolute;
+    top:50%;
+    left:1rem;
+    transform: translateY(-50%);
+    content: '';
+    background: url("../../assets/icons/location.png") center/cover;
+}
+.location h2{
+    width:12rem;
+    height:100%;
+    color:black;
+    font-weight: bold;
+    /*background: -webkit-gradient(linear,90% 50%,100% 50%,from(#ccc),to(white));*/
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.toLoc .location>span:nth-child(2){
+    width: 1rem;
+    height: 1rem;
+    margin-left: .5rem;
+    background: url("../../assets/icons/drop.png") center/cover no-repeat;
+}
+
+.aboutLoc>a:nth-child(3){
+    position:absolute;
+    right:2%;
+    width: 1.6rem;
+    height: 1.6rem;
+    background: url("../../assets/icons/mysetting_icon/message.png") center/cover no-repeat;
+}
+.aboutLoc>span{
+    position:absolute;
+    right:calc(2rem + 2%);
+    width: 1.6rem;
+    height: 1.6rem;
+    background: url("../../assets/icons/logout.png") center/cover no-repeat;
+}
+.header .go_back{
+    display:block;
+    position: absolute;
+    text-align: center;
+    width:20%;
+}
+.header .go_back:after{
+    content: '<';
+}
+.header .introduce{
+    text-align: center;
+}

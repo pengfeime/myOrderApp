@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico"/>
+    <meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1"/>
+    <meta name="theme-color" content="#000000"/>
+    <meta
+            name="description"
+            content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="logo192.png"/>
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json"/>
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+    <!--百度地图没有提供AMD、CMD加载的方式，只能以script标签加载的方式。-->
+    <script src="https://api.map.baidu.com/getscript?v=2.0&ak=GxkLBsCfq7EY8R08IAMGgM5iHGUMO3lD"></script>
+    <script>
+        // 响应式布局
+        (function (){
+            let resizeEvt = ('orientationchange' in window? 'orientationchange':'resize')
+            function FontAutoAdapt(){
+                let vp,
+                    dpr,
+                    rem,
+                    rootWidth,
+                    scale,
+                    rootHtml = document.documentElement
+
+                dpr = 1 // 移动端像素比
+                // 限制页面最大值
+                rootWidth = rootHtml.clientWidth
+                rootWidth = (rootWidth > 800?800:rootWidth)
+                // 根据设计稿修改html的font-size iphone5的设计稿320px宽分为32rem
+                rem = dpr * rootWidth/32
+                scale = 1/dpr
+                // 设置viewport，动态缩放页面达到高清效果（移动端）
+                vp = document.querySelector('meta[name="viewport"]')
+                vp.setAttribute('content',`width=${rootWidth*dpr},initial-scale=${scale},maximum-scale=${scale},minimum-scale=${scale},user-scalable=no`)
+
+                // 写入fontsize样式
+                rootHtml.style.fontSize = `${rem}px`
+            }
+
+            FontAutoAdapt()
+            document.addEventListener('DOMContentLoaded',FontAutoAdapt,false)
+            window.addEventListener(resizeEvt,FontAutoAdapt,false)
+        })()
+        // <!--在桌面浏览器使用geolocation会遇到网络阻塞问题 （国内政策）
+        // PositionError {code: 2, message: "Network location provider at 'https://www.googleapis.com/' : No response received."}
+        // 在移动端是完全可以的
+        // -->
+
+           navigator.geolocation.getCurrentPosition(pos => {
+                    let lat = pos.coords.latitude,
+                        lng = pos.coords.longitude;
+                    let geoc = new BMap.Geocoder();
+                    let point = new BMap.Point(lng, lat);
+                    // 坐标转换，谷歌坐标转百度坐标
+                    let convertor = new BMap.Convertor();
+                    let pointArr = [];
+                    pointArr.push(point);
+                    convertor.translate(pointArr, 3, 5, data => {
+                        if (data.status === 0) {
+                            let pt = data.points[0];
+                            geoc.getLocation(pt, function (rs) {
+                                let addComp = rs.addressComponents;
+                                rs.msg = "获取位置成功!";
+                                rs.data = [addComp.province, addComp.city];
+                            });
+                        }
+                    });
+                }, function (err) {
+                    // 定位失败则使用百度原生api,但有误差问题
+                    console.log(err);
+                    // <!--使用百度api获取经纬度会有误差-->
+                    // 用百度API得到的经纬度减去矫正值
+                    // 经度校正值： 0.008774687519;
+                    // 纬度校正值： 0.00374531687912;
+                    let geolocation = new BMap.Geolocation();
+                    // 用geocoder进行逆地址解析，根据经纬度获得具体位置
+                    const geoc = new BMap.Geocoder()
+                    geolocation.getCurrentPosition(function (r) {
+                        r.point.lng -= 0.008774687519
+                        r.point.lat -= 0.00374531687912
+                        if (this.getStatus() === BMAP_STATUS_SUCCESS) {
+                            geoc.getLocation(r.point, function (rs) {
+                                let addComp = rs.addressComponents;
+                                // let address = addComp.province+addComp.city+addComp.district+addComp.street+addComp.streetNumber;
+                                // console.log("百度地址："+address);
+                                sessionStorage.setItem('location',rs.address)
+                                sessionStorage.setItem('city',addComp.city)
+                                sessionStorage.setItem('province',addComp.province)
+                            });
+                        } else {
+                            console.log('failed' + this.getStatus())
+                        }
+                    }) // enableHighAccuracy表示是否采用高精度
+
+                    //      code：返回获取位置的状态
+                    //      0  :  不包括其他错误编号中的错误
+                    // ​     1  :  用户拒绝浏览器获取位置信息
+                    // ​	    2  :  尝试获取用户信息，但失败了
+                    // ​	    3  :   设置了timeout值，获取位置超时了
+                }, {
+                    enableHighAcuracy: true, //位置是否精确获取
+                    timeout: 100,            //获取位置允许的最长时间
+                    maximumAge: 100          //多久更新获取一次位置
+                }
+            )
+
+
+
+
+    </script>
+</head>
+<body>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div id="root"></div>
+<!--
+  This HTML file is a template.
+  If you open it directly in the browser, you will see an empty page.
+
+  You can add webfonts, meta tags, or analytics to this file.
+  The build step will place the bundled scripts into the <body> tag.
+
+  To begin the development, run `npm start` or `yarn start`.
+  To create a production bundle, use `npm run build` or `yarn build`.
+-->
+</body>
+</html>

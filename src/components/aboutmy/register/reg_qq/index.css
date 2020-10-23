@@ -1,0 +1,68 @@
+.loginQQ{
+    width: 100%;
+}
+.log_qq{
+    position: relative;
+    /*这里的left是相对于元素本身的位置发生的移动*/
+    left:-2.7rem;
+    width: 3rem;
+    height: 4rem;
+    margin: 1rem auto;
+    background: url("../../../../assets/iconImage/QQ.png") center/cover no-repeat;
+}
+.loginQQ input{
+    display: block;
+    width: 100%;
+    height: 2rem;
+    margin: .3rem 0;
+    text-align: center;
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    background: #EEEEEE;
+}
+.cover{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background:transparent;
+    filter:brightness(50%);
+    display: none;
+}
+.covering{
+    display: block;
+    z-index: 100;
+}
+.log_qq::after{
+    content: 'QQ';
+    display: block;
+    width: 5rem;
+    height: 4rem;
+    line-height: 4rem;
+    font-size: 3rem;
+    font-family: STKaiti;
+    /*注意这里的margin-left是以log_qq的左边为基准的*/
+    margin-left: 3.4rem;
+}
+.submitReg{
+    display: block;
+    height: 2rem;
+    text-align: center;
+    width: 100%;
+    margin: 1rem 0;
+    border-radius: 5%;
+    outline: none;
+    border: 1px solid transparent;
+    background: #ccc;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.green{
+    background: #09d3ac;
+}
+.submitReg:active{
+    background: green;
+}

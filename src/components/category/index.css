@@ -1,0 +1,318 @@
+.allCate{
+    margin: 1rem .5rem;
+}
+.allCate hr{
+    /*border:0 是为了去掉hr的其中一条阴影线*/
+    border: 0;
+    border-bottom: 2px solid #ccc;
+}
+.allCate h2{
+    margin-top:2rem;
+}
+.allCate .cate{
+    width:100%;
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content:center;
+}
+.cate li{
+    width: 20%;
+    padding:.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+}
+.cate li>div:nth-child(1){
+    width: 4rem;
+    height: 4rem;
+    margin:.3rem 0;
+    border-radius: 50%;
+    background: center/cover no-repeat;
+}
+.cate li:nth-child(1)>div:nth-child(1){
+    background-image: url("../../assets/icons/cate_icon/food.png");
+}
+.cate li:nth-child(2)>div:nth-child(1){
+    background-image: url("../../assets/icons/cate_icon/shopping.png");
+}
+.cate li:nth-child(3)>div:nth-child(1){
+    background-image: url("../../assets/icons/cate_icon/fruits.png");
+}
+.cate li:nth-child(4)>div:nth-child(1){
+    background-image: url("../../assets/icons/cate_icon/sweet.png");
+}
+.cate li:nth-child(5)>div:nth-child(1){
+    background-image: url("../../assets/icons/cate_icon/hamburger.png");
+}
+.cate li:nth-child(6)>div:nth-child(1){
+    background-image: url("../../assets/icons/cate_icon/barbecue.png");
+}
+.cate li:nth-child(7)>div:nth-child(1){
+    background-image: url("../../assets/icons/cate_icon/five_star.png");
+}
+.cate li:nth-child(8)>div:nth-child(1){
+    background-image: url("../../assets/icons/cate_icon/discount.png");
+}
+.cate li:nth-child(9)>div:nth-child(1){
+    background-image: url("../../assets/icons/cate_icon/hamburger.png");
+}
+.cate li:nth-child(10)>div:nth-child(1){
+    background-image: url("../../assets/icons/cate_icon/welfare.png");
+}
+.advertise .welfare{
+    display:flex;
+    align-items:center;
+}
+.welfare>span:nth-child(1){
+    font-size: 1.5rem;
+    font-weight:bold;
+}
+.welfare>span:nth-child(2){
+    margin-left: 2rem;
+    width:1.8rem;
+    height:1.8rem;
+    background:url("../../assets/images/pocket.png") center/cover no-repeat;
+    animation:rotate 5s infinite linear;
+}
+.welfare>span:nth-child(2)>a{
+    display: inline-block;
+    width: 100%;
+    height:100%;
+}
+.welfare>span:nth-child(3):before{
+    content: '<-';
+    width:1rem;
+    height:1rem;
+    color:black;
+}
+.welfare>span:nth-child(3){
+    margin-left: 1rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color:darkkhaki;
+    animation:toBig 3s infinite ease-in-out;
+}
+@keyframes toBig {
+    0%{
+        transform:scale(1);
+        color: darkblue;
+    }
+    50%{
+        transform:scale(1.1);
+        color:green;
+    }
+    100%{
+        transform:scale(1);
+        color:darkkhaki;
+    }
+}
+@keyframes rotate {
+    0%{
+        transform:scale(1) rotate(0deg);
+    }
+    25%{
+        transform:scale(1.2) rotate(-30deg);
+    }
+    50%{
+        transform:scale(1.4) rotate(0deg);
+    }
+    75%{
+        transform:scale(1.2) rotate(30deg);
+    }
+    100%{
+        transform:scale(1) rotate(0deg);
+    }
+}
+.advertise .count{
+    width:100%;
+}
+.advertise .count>div>div{
+    width: 100%;
+    padding:.5rem;
+    border-radius:.4rem;
+}
+.advertise .count>div{
+    position: relative;
+    display: inline-block;
+    width:46%;
+    margin:2%;
+    overflow: hidden;
+}
+.advertise .count>div>div:hover +i{
+    left:100%;
+    -webkit-transition:left 1s;
+    -moz-transition:left 1s;
+    -ms-transition:left 1s;
+    -o-transition:left 1s;
+    transition:left 1s;
+}
+.advertise .count>div>i{
+    position:absolute;
+    width:100%;
+    height: 100%;
+    left:-100%;
+    top:0;
+    border-radius: .4rem;
+    -webkit-transform: rotate(-30deg);
+    -moz-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    -o-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+    /*background-image: linear-gradient(0deg,rgba(255,255,255,0),red,rgba(255,255,255,0));*/
+    -webkit-background-image: linear-gradient(to right bottom,transparent 0%,transparent 20%,rgba(255,255,255,0.5) 50%,transparent 80%);
+    -moz-background-image: linear-gradient(to right bottom,transparent 0%,transparent 20%,rgba(255,255,255,0.5) 50%,transparent 80%);
+    -ms-background-image: linear-gradient(to right bottom,transparent 0%,transparent 20%,rgba(255,255,255,0.5) 50%,transparent 80%);
+    -o-background-image: linear-gradient(to right bottom,transparent 0%,transparent 20%,rgba(255,255,255,0.5) 50%,transparent 80%);
+    background-image: linear-gradient(to right bottom,transparent 0%,transparent 20%,rgba(255,255,255,0.5) 50%,transparent 80%);
+}
+.advertise .count .viper{
+    background:lightgoldenrodyellow;
+}
+.advertise .count .allowance{
+    background: lightpink;
+}
+.count h3{
+    font-weight: bold;
+}
+.count .money{
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: orangered;
+}
+.count>div>div>div{
+    position:relative;
+    height:2.2rem;
+}
+.count>div>div>div>span:nth-child(2){
+    position:absolute;
+    right:0;
+    display: inline-block;
+    width:1.8rem;
+    height:1.8rem;
+    background: center/cover no-repeat;
+}
+.count>div>div>div span.icon_vip{
+    background-image:url("../../assets/icons/cate_icon/vip.png");
+}
+.count>div>div>div span.icon_money{
+    background-image:url("../../assets/icons/cate_icon/welfare.png");
+}
+.advertise .imgIntro{
+    position:relative;
+    width: 100%;
+    height:10rem;
+    border-radius:.5rem;
+    position:relative;
+    overflow: hidden;
+
+}
+.advertise .imgIntro .discount_zone{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height:70%;
+    left: 0;
+    bottom: 0;
+}
+.advertise .imgIntro .discount_zone>img{
+    width: 28%;
+    height: 80%;
+    border-radius: 5px;
+}
+.advertise .imgIntro>a>span{
+    cursor: pointer;
+    border-radius: .3rem;
+}
+/*为不让父元素模糊效果继承给子元素，这里使用伪类实现filter效果*/
+.advertise .imgIntro:before{
+    position:absolute;
+    top:0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: url("../../assets/icons/cate_icon/spring.jpg") center left/cover no-repeat;
+    filter:blur(1px);
+    z-index:-1;
+}
+.advertise .imgIntro>a>span{
+    display: inline-block;
+    background: lightgreen;
+    height:2rem;
+    line-height:2rem;
+    font-weight:bold;
+    animation:advertise 10s linear infinite;
+}
+@keyframes advertise {
+    0%{
+        transform:rotate(0deg);
+    }
+    25%{
+        transform:rotate(5deg) scale(1.2);
+    }
+    50%{
+        transform:rotate(0deg) scale(1.3);
+    }
+    75%{
+        transform:rotate(-5deg) scale(1.2);
+    }
+    100%{
+        transform:rotate(0deg) scale(1);
+    }
+}
+.wrapDiv{
+    position:absolute;
+    top:0;
+    left:0;
+    width:1rem;
+    height:1rem;
+    border-radius: 50%;
+    opacity:0.05;
+    /*这里的3d父元素要注意！！*/
+    transform-style:preserve-3d;
+    perspective:300px;
+    transform: rotateY(0deg) rotateZ(0deg);
+    animation-name: Wrap;
+    animation-fill-mode: forwards;
+    z-index:2;
+}
+@keyframes Wrap {
+    0%{top:0;}
+    20%{
+        opacity:.6;
+    }
+    50%{
+        transform: rotateX(10deg) rotateY(180deg) rotateZ(10deg) scale3d(1.2,1.2,1.2);
+        opacity:1;
+    }
+    100%{
+        top:100%;
+        /*left:0%;*/
+        transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg) scale3d(1,1,1);
+        opacity:0;
+    }
+}
+.goldDiv{
+    width:1rem;
+    height:1rem;
+    margin-left: 0;
+    background: url("../../assets/icons/cate_icon/gold.png") center/cover no-repeat;
+    animation-name: gold;
+    animation-fill-mode: forwards;
+    z-index:2;
+}
+@keyframes gold {
+    0%{
+        margin-left: 0;
+    }
+    50%{
+        margin-left:80%;
+    }
+    100%{
+        margin-left:20%;
+    }
+}

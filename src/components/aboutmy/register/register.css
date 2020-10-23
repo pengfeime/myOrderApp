@@ -1,0 +1,23 @@
+.register{
+    margin: 3rem .5rem 1rem 1rem;
+}
+.register h2{
+    margin-bottom: 1rem;
+}
+
+.register h2{
+    display: inline-block;
+}
+.unacquire{
+    background: lightgray;
+    color: white;
+}
+.acquire{
+    color: lightsalmon;
+    color: #282c34;
+}
+.register .toOther{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

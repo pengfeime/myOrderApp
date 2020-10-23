@@ -1,0 +1,66 @@
+.foot{
+    position:fixed;
+    bottom:0;
+    width: 100%;
+    height: 3.5rem;
+    background-color: white;
+    border-top: 1px solid #ccc;
+    z-index: 30;
+}
+.footer{
+    width:100%;
+    height: 3.5rem;
+}
+.footer ul{
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.footer li{
+    list-style: none;
+
+}
+.footer a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex:1;
+}
+.checked{
+    color:#1296db;
+}
+.footer a li{
+}
+.footer a div:first-child{
+    width:1.5rem;
+    height:1.5rem;
+    margin: auto;
+}
+.delive{
+    background:url("../../assets/icons/index.png") center/cover no-repeat;
+}
+.finds{
+    background:url("../../assets/icons/search.png") center/cover no-repeat;
+}
+.orders{
+    background:url("../../assets/icons/order.png") center/cover no-repeat;
+}
+.mys{
+    background:url("../../assets/icons/about.png") center/cover no-repeat;
+}
+
+.delive_sel{
+    background:url("../../assets/icons/home_selected.png") center/cover no-repeat;
+}
+.find_sel{
+    background:url("../../assets/icons/search_selsected.png") center/cover no-repeat;
+}
+.order_sel{
+    background:url("../../assets/icons/order_selected.png") center/cover no-repeat;
+}
+.my_sel{
+    background:url("../../assets/icons/about_selected.png") center/cover no-repeat;
+}
+

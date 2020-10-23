@@ -1,0 +1,71 @@
+.turncard{
+  background: #e7244b;
+  padding:3rem;
+  //height:~'calc(100vh - 6.5rem)';
+  h2{
+    padding:2rem 0;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+  span{
+    display: inline-block;
+    position:relative;
+    width:30%;
+    height:10rem;
+    background: lightcoral;
+    margin:.5rem 1.6%;
+    transform:rotateY(0deg);
+    transition:all 1s;
+    img:nth-child(1){
+      position:absolute;
+      top:0;
+      left:0;
+      width: 100%;
+      height: 100%;
+      z-index:2;
+    }
+    img:nth-child(2){
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      z-index:1;
+      transform: rotateY(180deg);
+    }
+    @keyframes rel_img{
+       0%{
+         z-index:1;
+       }
+       100%{
+         z-index:2;
+       }
+     }
+    @keyframes cover_img{
+      0%{
+        z-index:2;
+      }
+      100%{
+        z-index:1;
+      }
+    }
+  }
+  .grey{
+    background: lightgray;
+  }
+  button{
+    display: block;
+    height:3rem;
+    line-height: 3rem;
+    width:50%;
+    margin: 1rem auto;
+    border-radius:5px;
+    overflow: hidden;
+    font-weight:bold;
+    background: linear-gradient(to right,lightgreen 0%,green 60%,lightgreen);
+    color:white;
+  }
+}
+
+
