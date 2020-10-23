@@ -69,10 +69,11 @@
     width:3rem;
     height:1.5rem;
 }
-video{
+#video{
     position:absolute;
-    margin:auto;
     top:6rem;
+    height:calc(100vh*0.3);
+    width:100%;
 }
 .higherbox input{
     width: 100%;

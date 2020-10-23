@@ -707,7 +707,7 @@ class Search extends Component {
                             this._freCanvas = c
                         }}></canvas>
 
-                        <audio src={require("../../assets/music/Vk-planet.mp3")} ref={(a) => {
+                        <audio id={'audio'} src={require("../../assets/music/Vk-planet.mp3")} ref={(a) => {
                             this._audio = a
                         }}>
                         </audio>
@@ -758,7 +758,7 @@ class Search extends Component {
 
                 </ul>
 
-                {!this.state.isClear && <video src={require('../../assets/advertising.mp4')} width={25*this.state.fontSize} height={this.state.Height - 6*this.state.fontSize} controls={'controls'} poster={require('../../assets/images/hamburger.jpg')} muted={'muted'} ref={(v) => {
+                {!this.state.isClear && <video id={'video'} src={require('../../assets/advertising.mp4')} controls={'controls'} poster={require('../../assets/images/hamburger.jpg')} muted={'muted'} ref={(v) => {
                     this._video = v
                 }}></video>}
 
@@ -771,6 +771,7 @@ class Search extends Component {
     }
 
     componentDidMount() {
+        console.log(document.body.clientWidth,'document.body.clientWidth')
         // 创建analyser节点 音频对象
         let audioCtx = new window.AudioContext()
         // 分析机

@@ -1,17 +1,17 @@
-const Koa = require('koa')
+﻿const Koa = require('koa')
 const koaBody = require('koa-body')
 const static = require('koa-static')
 const path = require('path')
-// const cors = require('koa-cors')
-// const sslify = require('koa-sslify').default;//http强制HTTPS
-// const https = require('https');//node内置https server
-//const fs = require('fs')
+const cors = require('koa-cors')
+//const sslify = require('koa-sslify').default;//http强制HTTPS
+const https = require('https');//node内置https server
+const http = require('http')
+const fs = require('fs')
 // 引入session
 const session = require('koa-session')
 const router = require('./router')
 // 创建app服务
 const app = new Koa
-
 
 
 // 用于session签名sign
@@ -55,15 +55,34 @@ app.use(router.routes())
 app.use(static(path.join(__dirname)))
 
 
+// 这里是我试验的
+//let httpPort = 3001;
+let httpsPort = 3002;
+ 
+//let server = http.createServer(app.callback()).listen(httpPort);
+ 
+let options= {
+     key:fs.readFileSync(path.join(__dirname,'./keystore/4159847_www.lengendliu.cn.key')), //私钥文件
+     cert:fs.readFileSync(path.join(__dirname,'./keystore/4159847_www.lengendliu.cn.pem')) //证书文件
+ }
+ 
+let sserver = https.createServer(options, app.callback()).listen(httpsPort);
+
+// 这里也是试验
+
+
+
+
+
 // app.use(sslify()) // 使用ssl
 // let options= {
-//     key:fs.readFileSync('../../../keystore/4159847_www.lengendliu.cn.key'), //私钥文件
-//     cert:fs.readFileSync('../../../keystore/4159847_www.lengendliu.cn.pem') //证书文件
-// }
+//      key:fs.readFileSync('./keystore/4159847_www.lengendliu.cn.key'), //私钥文件
+//      cert:fs.readFileSync('./keystore/4159847_www.lengendliu.cn.pem') //证书文件
+//  }
 // // app.callback()是koa封装好的一个函数，作为原生nodejs的callback回调函数，接收req,res两个参数
-// https.createServer(options,app.callback()).listen(3002,() => {
+//  https.createServer(options,app.callback()).listen(3002,() => {
 //     console.log('Your server is running at port:3002 successfully!')
 // })
-app.listen(3002,() => {
-    console.log('Your server is running at port:3002 successfully!')
-})
+// app.listen(3001,() => {
+//     console.log('Your server is running at port:3002 successfully!')
+// })
